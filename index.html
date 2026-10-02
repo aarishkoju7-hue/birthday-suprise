@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Happy Birthday ❤️</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            color: #333;
+
+            background: linear-gradient(
+                135deg,
+                #ffd6e7,
+                #fff0f5,
+                #ffe4ec
+            );
+
+            overflow-x: hidden;
+        }
+
+
+        /* =========================
+           HERO SECTION
+        ========================= */
+
+        .hero {
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            position: relative;
+            overflow: hidden;
+
+            padding: 30px;
+        }
+
+        .birthday {
+            position: relative;
+            z-index: 2;
+        }
+
+        .small-text {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 20px;
+
+            animation: appear 2s ease;
+        }
+
+        h1 {
+            font-size: 60px;
+            color: #e91e63;
+
+            animation: appear 3s ease;
+        }
+
+        .name {
+            font-size: 38px;
+            margin-top: 15px;
+            color: #333;
+
+            animation: appear 4s ease;
+        }
+
+        .hero-message {
+            font-size: 20px;
+            margin-top: 25px;
+            color: #666;
+
+            animation: appear 5s ease;
+        }
+
+        .heart {
+            font-size: 75px;
+            color: #ff4f81;
+            margin-top: 30px;
+
+            animation: heartbeat 1.2s infinite;
+        }
+
+
+        /* =========================
+           FLOATING HEARTS
+        ========================= */
+
+        .floating-heart {
+            position: absolute;
+
+            color: rgba(255, 79, 129, 0.5);
+
+            font-size: 25px;
+
+            animation: floatUp 7s linear infinite;
+        }
+
+        .heart1 {
+            left: 10%;
+            bottom: -50px;
+            animation-delay: 1s;
+        }
+
+        .heart2 {
+            left: 30%;
+            bottom: -50px;
+            animation-delay: 3s;
+        }
+
+        .heart3 {
+            left: 55%;
+            bottom: -50px;
+            animation-delay: 5s;
+        }
+
+        .heart4 {
+            left: 80%;
+            bottom: -50px;
+            animation-delay: 2s;
+        }
+
+
+        /* =========================
+           GENERAL SECTION
+        ========================= */
+
+        section {
+            padding: 80px 20px;
+        }
+
+        .section-title {
+            font-size: 35px;
+            color: #e91e63;
+            margin-bottom: 35px;
+        }
+
+
+        /* =========================
+           LETTER
+        ========================= */
+
+        .letter {
+            max-width: 650px;
+
+            margin: auto;
+
+            padding: 35px;
+
+            background: rgba(255, 255, 255, 0.7);
+
+            border-radius: 25px;
+
+            box-shadow:
+                0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .letter p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #555;
+
+            margin-bottom: 20px;
+        }
+
+
+        /* =========================
+           FLOWER
+        ========================= */
+
+        .flower-section {
+            margin-top: 60px;
+        }
+
+        .flower {
+            width: 170px;
+            height: 170px;
+
+            position: relative;
+
+            margin: auto;
+
+            animation: flowerFloat 3s ease-in-out infinite;
+        }
+
+        .petal {
+            width: 70px;
+            height: 70px;
+
+            background: #ff6f9c;
+
+            border-radius: 50%;
+
+            position: absolute;
+
+            top: 50px;
+            left: 50px;
+        }
+
+        .petal1 {
+            transform: translateY(-40px);
+        }
+
+        .petal2 {
+            transform: translateX(40px);
+        }
+
+        .petal3 {
+            transform: translateY(40px);
+        }
+
+        .petal4 {
+            transform: translateX(-40px);
+        }
+
+        .petal5 {
+            transform: translate(28px, -28px);
+        }
+
+        .center {
+            width: 50px;
+            height: 50px;
+
+            background: #ffd54f;
+
+            border-radius: 50%;
+
+            position: absolute;
+
+            top: 60px;
+            left: 60px;
+
+            box-shadow:
+                0 0 25px rgba(255, 213, 79, 0.8);
+        }
+
+        .flower-text {
+            margin-top: 30px;
+
+            font-size: 18px;
+
+            color: #666;
+        }
+
+
+        /* =========================
+           MEMORIES
+        ========================= */
+
+        .memories {
+            max-width: 1000px;
+
+            margin: auto;
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 25px;
+
+            flex-wrap: wrap;
+        }
+
+        .memory {
+            width: 280px;
+
+            background: white;
+
+            padding: 15px;
+
+            border-radius: 20px;
+
+            box-shadow:
+                0 10px 30px rgba(0, 0, 0, 0.1);
+
+            transition: 0.4s;
+        }
+
+        .memory:hover {
+            transform: translateY(-10px);
+        }
+
+        .memory img {
+            width: 100%;
+
+            height: 250px;
+
+            object-fit: cover;
+
+            border-radius: 15px;
+        }
+
+        .memory p {
+            margin-top: 15px;
+
+            font-size: 17px;
+
+            color: #555;
+        }
+
+
+        /* =========================
+           MUSIC
+        ========================= */
+
+        .music-box {
+            max-width: 600px;
+
+            margin: auto;
+
+            padding: 30px;
+
+            background: rgba(255, 255, 255, 0.7);
+
+            border-radius: 25px;
+        }
+
+        .music-box p {
+            margin-bottom: 20px;
+
+            font-size: 18px;
+
+            color: #555;
+        }
+
+        audio {
+            width: 100%;
+        }
+
+
+        /* =========================
+           FINAL SURPRISE
+        ========================= */
+
+        .final {
+            min-height: 70vh;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+            align-items: center;
+
+            padding: 50px 20px;
+        }
+
+        .final h2 {
+            font-size: 45px;
+
+            color: #e91e63;
+
+            margin-bottom: 25px;
+        }
+
+        .final p {
+            max-width: 650px;
+
+            font-size: 20px;
+
+            line-height: 1.8;
+
+            color: #555;
+        }
+
+        .big-heart {
+            font-size: 100px;
+
+            color: #ff4f81;
+
+            margin-top: 30px;
+
+            animation: heartbeat 1.2s infinite;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            padding: 30px;
+
+            color: #777;
+
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           ANIMATIONS
+        ========================= */
+
+        @keyframes appear {
+
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        }
+
+
+        @keyframes heartbeat {
+
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.2);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+
+        }
+
+
+        @keyframes flowerFloat {
+
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-12px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+
+        }
+
+
+        @keyframes floatUp {
+
+            0% {
+                transform: translateY(0) rotate(0deg);
+
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-110vh) rotate(360deg);
+
+                opacity: 0;
+            }
+
+        }
+
+
+        /* =========================
+           PHONE RESPONSIVE
+        ========================= */
+
+        @media (max-width: 600px) {
+
+            h1 {
+                font-size: 42px;
+            }
+
+            .name {
+                font-size: 30px;
+            }
+
+            .hero-message {
+                font-size: 17px;
+            }
+
+            .section-title {
+                font-size: 30px;
+            }
+
+            .letter {
+                padding: 25px;
+            }
+
+            .letter p {
+                font-size: 16px;
+            }
+
+            .memory {
+                width: 90%;
+            }
+
+            .final h2 {
+                font-size: 35px;
+            }
+
+            .final p {
+                font-size: 17px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         BIRTHDAY OPENING
+    ========================= -->
+
+    <section class="hero">
+
+        <div class="floating-heart heart1">♥</div>
+        <div class="floating-heart heart2">♥</div>
+        <div class="floating-heart heart3">♥</div>
+        <div class="floating-heart heart4">♥</div>
+
+
+        <div class="birthday">
+
+            <p class="small-text">
+                A little surprise made specially for you...
+            </p>
+
+            <h1>
+                Happy Birthday 🎂
+            </h1>
+
+            <h2 class="name">
+                NISHMA ❤️
+            </h2>
+
+            <p class="hero-message">
+                Today is all about you.
+            </p>
+
+            <div class="heart">
+                ♥
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         PERSONAL LETTER
+    ========================= -->
+
+    <section>
+
+        <h2 class="section-title">
+            💌 A Little Message
+        </h2>
+
+        <div class="letter">
+
+            
+
+            <p>
+               Happy Birthday, my love.❤️
+            </p>
+            <p>
+            I hope this new year of your life brings you more happiness, peace, beautiful memories, and everything your heart wishes
+            for.Life keeps changing, people grow, and new chapters begin, but I hope we continue making beautiful memories together
+            along the way.🧡
+            </p>  
+            <p>
+            Thank you for being a special part of my life. I may not always have the perfect words, but I hope you always know that
+            you are deeply appreciated and cared for.💙
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         FLOWER
+    ========================= -->
+
+    <section class="flower-section">
+
+        <h2 class="section-title">
+            🌷 A Flower For You
+        </h2>
+
+
+        <div class="flower">
+
+            <div class="petal petal1"></div>
+
+            <div class="petal petal2"></div>
+
+            <div class="petal petal3"></div>
+
+            <div class="petal petal4"></div>
+
+            <div class="petal petal5"></div>
+
+            <div class="center"></div>
+
+        </div>
+
+
+        <p class="flower-text">
+            A little flower made with code,
+            especially for you. ❤️
+        </p>
+
+    </section>
+
+
+
+    <!-- =========================
+         MEMORIES
+    ========================= -->
+
+    <section>
+
+        <h2 class="section-title">
+            📸 Some Memories
+        </h2>
+
+
+        <div class="memories">
+
+
+            <div class="memory">
+
+                <img src="C:\Users\Lenovo\Downloads\pic1.jpeg">
+
+                <p>
+                    One of my favorite memories with you ❤️
+                </p>
+
+            </div>
+
+
+            <div class="memory">
+
+                <img src="C:\Users\Lenovo\OneDrive\Documents\picture2.jpeg">
+
+                <p>
+                    A moment I'll always remember.
+                </p>
+
+            </div>
+
+
+            <div class="memory">
+
+                <img src="C:\Users\Lenovo\OneDrive\Documents\picture3.jpeg">
+
+                <p>
+                    Another little memory worth keeping. 💗
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         MUSIC
+    ========================= -->
+
+    <section>
+
+        <h2 class="section-title">
+            🎵 A Song For You
+        </h2>
+
+
+        <div class="music-box">
+
+            <p>
+                Maybe this song will remind you of us. ❤️
+            </p>
+
+            <audio controls>
+
+                <source src="C:\Users\Lenovo\Downloads\Mayalu - Swoopna Suman Ft. Dr.Trishala Gurung ( Official MV) [46Ie-GAR7ok].mp3" type="audio/mpeg">
+
+                Your browser does not support audio.
+
+            </audio>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         FINAL SURPRISE
+    ========================= -->
+
+    <section class="final">
+
+        <h2>
+            One More Thing 💗
+        </h2>
+
+
+        <p>
+            I could have just wished you Happy Birthday,
+            but I wanted to make something myself.
+        </p>
+
+        <br>
+
+
+        <p>
+            So I turned a little bit of code into something
+            made especially for you.
+        </p>
+
+
+        <div class="big-heart">
+            ❤️
+        </div>
+
+
+        <p>
+            Happy Birthday once again. 🎂
+        </p>
+
+    </section>
+
+
+
+    <footer>
+
+        Made with ❤️ + HTML + CSS
+
+    </footer>
+
+
+</body>
+
+</html>
